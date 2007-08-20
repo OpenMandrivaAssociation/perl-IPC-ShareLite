@@ -1,6 +1,6 @@
 %define module  IPC-ShareLite
 %define version 0.09
-%define release 4mdk
+%define release %mkrel 4
 %define	pdir	IPC
 %define pname   ShareLite
 
