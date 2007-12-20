@@ -13,6 +13,7 @@ License: 	GPL or Artistic
 Group: 		Development/Perl
 Source0: 	ftp://ftp.perl.org/pub/CPAN/modules/by-module/%{pdir}/%{pdir}-%{pname}-%{version}.tar.bz2
 Url: 		http://search.cpan.org/search?dist=IPC-ShareLite
+BuildRoot: 	%{_tmppath}/%{name}-buildroot
 Requires: 	perl
 BuildRequires:	perl-devel >= 5.8.0
 
