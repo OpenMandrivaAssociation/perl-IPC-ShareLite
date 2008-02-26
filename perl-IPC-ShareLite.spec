@@ -1,21 +1,19 @@
 %define module  IPC-ShareLite
-%define version 0.09
-%define release %mkrel 5
-%define	pdir	IPC
-%define pname   ShareLite
+%define name    perl-%{module}
+%define version 0.12
+%define release %mkrel 1
 
 
-Summary: 	%{module} module for perl
-Name: 		perl-%{module}
+Name: 		%{name}
 Version: 	%{version}
 Release: 	%{release}
+Summary: 	Lightweight interface to shared memory
 License: 	GPL or Artistic
 Group: 		Development/Perl
-Source0: 	ftp://ftp.perl.org/pub/CPAN/modules/by-module/%{pdir}/%{pdir}-%{pname}-%{version}.tar.bz2
-Url: 		http://search.cpan.org/search?dist=IPC-ShareLite
-BuildRoot: 	%{_tmppath}/%{name}-buildroot
-Requires: 	perl
+URL:            http://search.cpan.org/dist/%{module}
+Source:         http://www.cpan.org/modules/by-module/IPC/%{module}-%{version}.tar.gz
 BuildRequires:	perl-devel >= 5.8.0
+BuildRoot:      %{_tmppath}/%{name}-%{version}
 
 %description
 IPC-ShareLite module for perl.  IPC::ShareLite provides a simple
@@ -28,23 +26,21 @@ SysV IPC (shared memory and semaphores) in order to use this module.
 
 %build
 %{__perl} Makefile.PL INSTALLDIRS=vendor </dev/null
-make OPTIMIZE="$RPM_OPT_FLAGS" PREFIX=%{prefix}
+make CFLAGS="%{optflags}"
+
+%check
 make test
 
 %install
-rm -rf $RPM_BUILD_ROOT
+rm -rf %{buildroot}
 %makeinstall_std
 
 %clean 
-rm -rf $RPM_BUILD_ROOT
+rm -rf %{buildroot}
 
 %files
 %defattr(-,root,root)
-%doc Changes README TODO
+%doc Changes README
 %{_mandir}/*/*
-%dir %{perl_vendorlib}/*/auto/IPC/ShareLite
-%attr(755,root,root) %{perl_vendorlib}/*/auto/IPC/ShareLite/ShareLite.so
-%{perl_vendorlib}/*/auto/IPC/ShareLite/autosplit.ix
-%dir %{perl_vendorlib}/*/IPC
-%{perl_vendorlib}/*/IPC/ShareLite.pm
-
+%{perl_vendorarch}/auto/IPC
+%{perl_vendorarch}/IPC
