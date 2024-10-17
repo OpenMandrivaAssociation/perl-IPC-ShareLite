@@ -8,7 +8,7 @@ Release:	5
 Summary: 	Lightweight interface to shared memory
 License: 	GPL+ or Artistic
 Group: 		Development/Perl
-Url:        http://search.cpan.org/dist/%{upstream_name}
+Url:        https://search.cpan.org/dist/%{upstream_name}
 Source0:    http://www.cpan.org/modules/by-module/IPC/%{upstream_name}-%{upstream_version}.tar.gz
 
 BuildRequires:	perl-devel >= 5.8.0
