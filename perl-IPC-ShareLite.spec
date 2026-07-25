@@ -2,14 +2,14 @@
 %define upstream_version 0.17
 
 Name: 		perl-%{upstream_name}
-Version: 	%perl_convert_version %{upstream_version}
-Release:	5
+Version: 	%{upstream_version}
+Release:	6
 
 Summary: 	Lightweight interface to shared memory
 License: 	GPL+ or Artistic
 Group: 		Development/Perl
-Url:        https://search.cpan.org/dist/%{upstream_name}
-Source0:    http://www.cpan.org/modules/by-module/IPC/%{upstream_name}-%{upstream_version}.tar.gz
+Url:        https://metacpan.org/dist/IPC-ShareLite
+Source0:    https://cpan.metacpan.org/authors/id/A/AN/ANDYA/IPC-ShareLite-%{upstream_version}.tar.gz
 
 BuildRequires:	make
 BuildRequires:	perl-devel >= 5.8.0
@@ -103,7 +103,7 @@ rm -rf %{buildroot}
 * Wed May 28 2003 Thierry Vignaud <tvignaud@mandrakesoft.com> 0.09-2mdk
 - rebuild for new auto{prov,req}
 
-* Fri Apr 25 2003 François Pons <fpons@mandrakesoft.com> 0.09-1mdk
+* Fri Apr 25 2003 Franï¿½ois Pons <fpons@mandrakesoft.com> 0.09-1mdk
 - 0.09.
 
 * Sat Feb 01 2003 Lenny Cartier <lenny@mandrakesoft.com 0.08-3mdk
